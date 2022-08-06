@@ -1,0 +1,138 @@
+:root {
+  --violet: hsl(263, 55%, 52%);
+  --gray-blue: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --l-gray-blue: hsl(210, 46%, 95%);
+  --font: 'Barlow Semi Condensed', sans-serif;
+}
+* {
+  transition: all 400ms;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--l-gray-blue);
+}
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 65%;
+  gap: 3rem;
+}
+
+.span-2-col {
+  grid-column: span 2;
+}
+.testimonial {
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+}
+.span-2-row {
+  grid-column: 4;
+  grid-row: 1 / -1;
+}
+.testimonial-author {
+  color: var(--white);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.testimonial-stat {
+  color: hsla(0, 0%, 100%, 0.50);
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 400;
+  
+}
+.testimonial-text {
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+.testimonial-quote {
+  color: hsla(0, 0%, 100%, 0.70);
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+.white {
+  background-color: var(--white);
+  box-shadow: 0 2rem 10rem var(--light-gray);
+}
+.white .testimonial-author, .white .testimonial-text {
+  color: var(--gray-blue);
+}
+
+.white .testimonial-quote, .white .testimonial-stat {
+  color: rgb(122, 122, 122);
+}
+.violet {
+  background-color: var(--violet);
+  position: relative;
+}
+.gray-blue {
+  background-color: var(--gray-blue);
+}
+.dark-blue {
+  background-color: var(--dark-blue);
+}
+.author-box {
+  display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: -.5rem;
+}
+.icon {
+  border-radius: 50%;
+  
+  width: 3rem;
+  height: 3rem;
+}
+.absolute {
+  position: absolute;
+  top: 0%;
+  right: 17%;
+  z-index: 0;
+  overflow: hidden;
+}
+.border {
+  border: .2rem solid hsl(263, 100%, 73%);
+}
+@media (max-width: 1600px) {
+  .testimonials-container {
+    max-width: 80%;
+  }
+}
+@media (max-width: 1400px) {
+  .testimonials-container {
+    max-width: 90%;
+  }
+}
+@media (max-width: 1000px) {
+    .testimonials-container {
+      max-width: 95%;
+    }
+}
+@media (max-width: 800px) {
+  .testimonials-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 4rem 0;
+  }
+  .absolute {
+    right: 5%;
+  }
+}
